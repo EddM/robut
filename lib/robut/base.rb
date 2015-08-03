@@ -7,10 +7,14 @@ module Robut
 
     def robut(username, password, options = {}, &block)
       options = { username: username, password: password }.merge(options)
-      configuration = build_configuration(options)
-      @client = Robut::Client.new(configuration)
-      yield(@client)
+      @configuration = build_configuration(options)
+      client.sign_in
+      yield(client)
       initialize_event_loop!
+    end
+
+    def client
+      @client ||= Robut::Client.new(@configuration)
     end
 
     private

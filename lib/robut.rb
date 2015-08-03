@@ -1,3 +1,5 @@
+require "redditkit"
+
 require "robut/version"
 
 require "robut/configuration"
