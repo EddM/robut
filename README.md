@@ -3,11 +3,9 @@ Robut
 
 Robut is a Ruby framework for Reddit bots.
 
-# Installation
+## Installation
 
     gem install robut
-
-# Usage
 
 ## Quick Start
 
