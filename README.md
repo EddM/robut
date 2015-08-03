@@ -20,3 +20,11 @@ robut "My_Bot", "p4ssw0rd" do
   end
 end
 ````
+
+## Contributors
+
+If you wish to contribute to robut, please go right ahead. It's not in a very stable position right now, so any pull requests are welcome as long as they're accompanied by tests.
+
+## License
+
+robut is distributed under the terms of the GPL license. See LICENSE for details.
