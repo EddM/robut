@@ -8,7 +8,9 @@ module Robut
       end
 
       def call(comment)
-        @block.call(comment) if @regex =~ comment["body"]
+        if match_data = comment["body"].match(@regex)
+          @block.call(comment, match_data)
+        end
       end
     end
   end
