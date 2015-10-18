@@ -16,7 +16,7 @@ require "robut"
 
 robut "My_Bot", "p4ssw0rd" do
   listen /kittens/i do |comment|
-    reply_to_comment comment, "Kittens are awesome!"
+    post_comment_reply comment, "Kittens are awesome!"
   end
 end
 ````
@@ -29,9 +29,9 @@ If you wish to contribute to robut, please go right ahead. It's not in a very st
 
 On top of bug fixes and documentation, here is an idea of some features I'd like to get into robut. If you'd like to get involved with the project, perhaps one of these is a good place to start?
 
-[ ] Integration with a pseudo-realtime reddit library (like what [Pusher](https://blog.pusher.com/pusher-realtime-reddit-api) are doing)
-[ ] "Advanced usage" (perhaps the ability to provide custom classes instead of simple blocks to listeners)
-[ ] Better rate-limiting support
+- [ ] Integration with a pseudo-realtime reddit library (like what [Pusher](https://blog.pusher.com/pusher-realtime-reddit-api) are doing)
+- [ ] "Advanced usage" (perhaps the ability to provide custom classes instead of simple blocks to listeners)
+- [ ] Better rate-limiting support
 
 ## License
 
