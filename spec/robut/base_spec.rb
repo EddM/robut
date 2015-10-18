@@ -5,9 +5,8 @@ describe Robut::Base do
     Class.new { extend Robut::Base }
   end
 
-  it "further extends object with Robut's other base-level methods" do
-    expect(subject.singleton_class.included_modules).to include(Robut::Actions)
-    expect(subject.singleton_class.included_modules).to include(Robut::Listeners)
+  it "extends object with Robut's DSL methods" do
+    expect(subject).to respond_to(:robut)
   end
 
   it "initializes an event loop" do
@@ -17,7 +16,7 @@ describe Robut::Base do
     expect(subject).to receive(:initialize_event_loop!)
 
     subject.class_eval do
-      robut("username", "password") { }
+      robut("username", "password") {}
     end
   end
 end

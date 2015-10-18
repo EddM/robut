@@ -4,8 +4,12 @@ module Robut
   class Client
     extend Forwardable
 
-    def_delegator :@redditkit_client,
-                  :signed_in?, :sign_out
+    include Robut::Actions
+    include Robut::Listeners
+
+    def_delegators :@redditkit_client,
+                   :signed_in?, :sign_out,
+                   :submit_comment
 
     def initialize(configuration)
       @configuration = configuration
@@ -17,5 +21,9 @@ module Robut
       @redditkit_client.sign_in @configuration.username, @configuration.password
       Robut.logger.info "Successfully signed in as #{@configuration.username}"
     end
+  end
+
+  def self.client
+    @client ||= Robut::Client.new(@configuration)
   end
 end

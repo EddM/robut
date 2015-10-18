@@ -1,7 +1,7 @@
 Robut
 ======
 
-Robut is a Ruby framework for Reddit bots.
+Robut is a Ruby (micro-?)framework for Reddit bots.
 
 ![CircleCI Status](https://circleci.com/gh/EddM/robut.svg?style=shield&circle-token=ccbe1e900b4feda8a42aab885bd49e513fe3a67b)
 

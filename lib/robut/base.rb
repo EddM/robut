@@ -1,20 +1,11 @@
 module Robut
   module Base
-    def self.extended(base)
-      base.extend Robut::Actions
-      base.extend Robut::Listeners
-    end
-
     def robut(username, password, options = {}, &block)
       options = { username: username, password: password }.merge(options)
       @configuration = build_configuration(options)
-      client.sign_in
-      yield(client)
+      Robut.client.sign_in
+      Robut.client.instance_eval(&block)
       initialize_event_loop!
-    end
-
-    def client
-      @client ||= Robut::Client.new(@configuration)
     end
 
     private
@@ -28,7 +19,7 @@ module Robut
 
       loop do
         poller.poll!
-        sleep 5
+        sleep 10
       end
     end
   end

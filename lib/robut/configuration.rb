@@ -13,7 +13,8 @@ module Robut
 
       @attributes = {
         user_agent: "Robut/#{Robut::Version}",
-        subreddit: nil
+        subreddit: nil,
+        started_at: Time.now - 10000
       }.merge(options)
     end
 
